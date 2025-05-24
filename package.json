@@ -1,0 +1,30 @@
+{
+  "name": "cmsc-57-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'Build complete'",
+    "dev": "echo 'Development server'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NEH-VAR/cmsc-57-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NEH-VAR/cmsc-57-portfolio/issues"
+  },
+  "homepage": "https://github.com/NEH-VAR/cmsc-57-portfolio#readme",
+  "dependencies": {
+    "@googleapis/drive": "^12.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "marked": "^15.0.12",
+    "showdown": "^2.1.0"
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Content Viewer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #content {
+            padding: 20px;
+            min-height: 80vh;
+        }
+        .folder-item, .file-item {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .folder-item:hover, .file-item:hover {
+            background-color: #f0f0f0;
+        }
+        .folder-item i {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+        .file-item i {
+            color: #6c757d;
+            margin-right: 10px;
+        }
+        #breadcrumb {
+            margin-bottom: 20px;
+        }
+        #markdown-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Drive Content Viewer</a>
+            </div>
+        </nav>
+        
+        <div class="container mt-4">
+            <nav aria-label="breadcrumb" id="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" data-folder="root">Home</a></li>
+                </ol>
+            </nav>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Contents</h5>
+                        </div>
+                        <div class="card-body" id="folder-contents">
+                            <!-- Folders and files will be listed here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 id="content-title">Select a file to view</h5>
+                        </div>
+                        <div class="card-body" id="content">
+                            <div id="markdown-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
