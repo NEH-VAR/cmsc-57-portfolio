@@ -160,7 +160,7 @@ function updateBreadcrumbs(breadcrumbs) {
 // Navigate back to root
 function navigateToRoot() {
     folderStack = [];
-    currentFolderId = 'YOUR_ROOT_FOLDER_ID'; // Replace with your folder ID
+    currentFolderId = '14R4UWozwmNXj5rMkJ-HJTC1hQ38wEnps'; // Replace with your folder ID
     loadFolderContents(currentFolderId);
     updateBreadcrumbs();
     
