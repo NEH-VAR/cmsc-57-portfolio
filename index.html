@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Drive Content</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS-57 Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="md.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+  <script src="config.js"></script>
+  <script src="script.js" defer></script>
+
 </head>
 <body>
-    <div class="container">
-        <h1>My Drive Content</h1>
-        <div id="breadcrumbs"></div>
-        <div id="folder-contents">
-            <!-- Folders and files will be displayed here -->
-        </div>
-        <div id="file-viewer" style="display: none;">
-            <button id="back-button">← Back</button>
-            <div id="markdown-content"></div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <header>
+    <h1>My Portfolio</h1>
+    <div id="loading">Loading content...</div>
+  </header>
+
+  <nav id="sections-nav" >
+    <!-- Sections will be dynamically added here -->
+  </nav>
+
+  <main id="content-display" class="markdown-container">
+    <!-- Content will be dynamically added here -->
+  </main>
+
+  <footer>
+    <p>© 2023 CMS-57 Portfolio</p>
+  </footer>
 </body>
 </html>

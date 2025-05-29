@@ -1,0 +1,334 @@
+/* ====== IMPORTS & VARIABLES ====== */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  /* Colors */
+  --sage: #D1E0D7;
+  --navy: #607EBC;
+  --text-dark: #2D3748;
+  --text-heading: #1A365D;
+  --text-light: #F8F9FA;
+  --bg-light: #F5F7F6;
+  --bg-dark: #4A65A5;
+  --border: #B8C9C1;
+  
+  /* Hover states */
+  --hover-navy: #4A65A5;
+  --hover-sage: #B8C9C1;
+  
+  /* Shadows */
+  --shadow-sage: rgba(209, 224, 215, 0.1);
+  --shadow-navy: rgba(96, 126, 188, 0.15);
+  --shadow-dark: rgba(45, 55, 72, 0.2);
+}
+
+/* ====== BASE STYLES ====== */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Manrope";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: var(--sage);
+    color: var(--navy);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+}
+
+/* ====== LAYOUT STRUCTURE ====== */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+}
+
+/* ====== NAVIGATION ====== */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height: 80px;
+    padding: 8px 0px;
+}
+
+nav a {
+    width: fit-content;
+}
+
+nav img {
+    height: 60px;
+}
+
+/* ====== HERO SECTION ====== */
+#hero {
+    display: flex; 
+    flex-direction: column;
+    min-height: 95dvh;
+}
+
+
+#title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#title h1 {
+    font-size: 64px;
+    font-weight: 200;
+}
+
+#title h2 {
+    margin-top: -3rem;
+    font-size: 120px;
+    font-weight: 900;
+    letter-spacing: 20%;
+    background-color: var(--navy);
+    color: transparent;
+    text-shadow: 1px 2px 2px rgba(96, 126, 188, .80), 0 20px 0xpx 0px #222;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+/* ====== INTERACTIVE ELEMENTS ====== */
+#interactive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+}
+
+.card-carousel {
+    min-height: 600px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+
+    align-items: center;
+}
+
+
+.card-carousel::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.card {
+    scroll-snap-align: start;
+    flex: 0 0 auto; /* Prevent shrinking, ensure horizontal layout */
+    width: 280px;
+    max-width: 280px;
+    min-height: 420px;
+    max-height: 420px;
+    padding: 16px;
+    background-color: var(--bg-light);
+    border-radius: 26px;
+
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+    text-align: center;
+}
+
+.card div:first-child {
+    margin-bottom: 12px;
+}
+
+.image-container{
+    min-height: 270px;
+    height: 270px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.chapter {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+#interactive button {
+    /* Layout & Box Model */
+    display: inline-block;
+    padding: 16px 32px;
+    margin-top: 40px;
+    
+    /* Typography */
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    text-align: center;
+    
+    /* Visual Styling */
+    background-color: var(--navy);
+    border: 2px solid var(--navy);
+    border-radius: 50px;
+    cursor: pointer;
+    
+    /* Shadow & Effects */
+    box-shadow: 0 4px 15px var(--shadow-navy);
+    
+    /* Transition for animations */
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover State */
+#interactive button:hover {
+    background-color: var(--hover-navy);
+    border-color: var(--hover-navy);
+    box-shadow: 0 8px 25px var(--shadow-navy);
+    transform: translateY(-3px);
+}
+
+/* Active State */
+#interactive button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px var(--shadow-navy);
+}
+
+/* Optional: Ripple Effect */
+#interactive button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+#interactive button:hover::after {
+    animation: ripple 1s ease-out;
+}
+
+
+/* ====== ABOUT SECTION ====== */
+#about {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-bottom: 100px;
+}
+
+#about > div {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    height: fit-content;
+    max-width: 950px;
+    padding: 40px 24px;
+    background-color: var(--bg-light);
+    border-radius: 24px;
+}
+
+.portrait {
+    flex: 1;
+}
+
+.portrait img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.information {
+    flex: 2;
+}
+
+#about h1 {
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+#about h2 {
+    margin: 20px 0px 10px 0px;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px;
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    align-items: center;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+section{
+    padding: 100px 0px;
+}
+
+.content-card{
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 20px;
+
+    border-radius: 24px;
+    min-width: 1000px;
+}
+.portfolio{
+    width:200px;
+    text-align: left;
+}
+
+.content{
+    width: 100%;
+}
+
+.outline{
+    width: 200px;
+    text-align: right;
+}

@@ -1,7 +1,0 @@
-name = "static-site"
-main = ""
-compatibility_date = "2025-05-24"
-
-[site]
-bucket = "./"
-entry-point = ""

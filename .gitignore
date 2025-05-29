@@ -1,3 +1,12 @@
+# Ignore config file with API keys
+config.js
+
+# Node.js
 node_modules/
-.env
-.DS_Store
+npm-debug.log
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
