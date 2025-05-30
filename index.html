@@ -1,32 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CMS-57 Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="md.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
-  <script src="config.js"></script>
-  <script src="script.js" defer></script>
-
-</head>
-<body>
-  <header>
-    <h1>My Portfolio</h1>
-    <div id="loading">Loading content...</div>
-  </header>
-
-  <nav id="sections-nav" >
-    <!-- Sections will be dynamically added here -->
-  </nav>
-
-  <main id="content-display" class="markdown-container">
-    <!-- Content will be dynamically added here -->
-  </main>
-
-  <footer>
-    <p>© 2023 CMS-57 Portfolio</p>
-  </footer>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>CMSC 57 Portfolio</title>
+		<link
+			rel="stylesheet"
+			href="css/main.css"
+		/>
+		<script src="js/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<main>
+			<section id="hero">
+				<div id="title">
+					<h1>CMSC 57</h1>
+					<h2>PORTFOLIO</h2>
+				</div>
+				<div id="interactive">
+					<div class="card-carousel">
+						<div
+							class="card"
+							data-file="Counting"
+						>
+							<div class="image-container">
+								<img src="files/Counting/thumbnail.png" />
+							</div>
+							<h1>Counting</h1>
+							<p></p>
+						</div>
+						<div
+							class="card"
+							data-file="Algebraic Structures and Groups"
+						>
+							<div class="image-container">
+								<img src="files/Algebraic Structures and Groups/thumbnail.png" />
+							</div>
+							<h1>Algebraic Structures and Groups</h1>
+							<p></p>
+						</div>
+						<div class="card">
+							<div class="image-container">
+								<img src="files/Groups, Rings and Fields/thumbnail.png" />
+							</div>
+							<h1>Groups, Rings and Fields</h1>
+							<p></p>
+						</div>
+						<div class="card">
+							<div class="image-container">
+								<img src="files/Discrete Probability/thumbnail.png" />
+							</div>
+							<h1>Discrete Probability</h1>
+							<p></p>
+						</div>
+						<div class="card">
+							<div class="image-container">
+								<img src="files/Graphs/thumbnail.png" />
+							</div>
+							<h1>Graphs</h1>
+							<p></p>
+						</div>
+					</div>
+					<div>
+						<a href="portfolio.html"><button>Explore Portfolio</button> </a>
+					</div>
+				</div>
+			</section>
+			<section id="about">
+				<h1 style="font-weight: 600; font-size: 3rem">About Me</h1>
+				<div>
+					<div class="portrait">
+						<img src="files/portrait.jpg" />
+					</div>
+					<div class="information">
+						<div>
+							<h1>RAVHEN M. GRAGEDA</h1>
+							<p>
+								“I fell in love with computers as a kid—that spark never faded. Now, I get to
+								study what once fascinated me, turning curiosity into a lifelong journey.”
+							</p>
+						</div>
+						<div>
+							<h2>Tech I used for this project:</h2>
+							<a href="https://skillicons.dev">
+								<img
+									src="https://skillicons.dev/icons?i=github,vscode,html,css,jquery,cloudflare,photoshop&theme=light"
+								/>
+							</a>
+						</div>
+						<div>
+							<h2>Education:</h2>
+							<p>> Saint Columban College Junior High School (2018-2022)</p>
+							<p>> Pagadian City Science High School (2022-2024)</p>
+							<p>> University of the Philippines Mindanao (Present)</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer>
+				<!-- Dynamic Append -->
+			</footer>
+		</main>
+		<script src="js/footer.js"></script>
+		<script>
+			$(document).ready(function () {
+				// Handle card clicks
+				$(".card").on("click", function () {
+					const fileName = $(this).data("file");
+					window.location.href = `portfolio.html?file=${fileName}`;
+				});
+			});
+		</script>
+	</body>
 </html>

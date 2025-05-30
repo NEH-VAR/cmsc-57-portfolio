@@ -365,3 +365,136 @@ a {
     transform: scale(20, 20);
   }
 }
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Large Desktop: 1440px and below */
+@media (max-width: 1440px) {
+  section {
+    padding: 80px;
+    max-width: 1024px;
+  }
+
+  .content-card{
+    max-width: 100%;
+  }
+
+
+  #title h2 {
+    font-size: 100px;
+  }
+
+  .card-carousel {
+    gap: 16px;
+    max-width: 1024px;
+  }
+}
+
+/* Tablet: Hide side panels on tablets and below */
+@media (max-width: 1024px) {
+  .content-card {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+  }
+
+  section{
+    width: 100%;
+    max-width: 1024px;
+  }
+
+  .card-carousel {
+    max-width: 768px;
+  }
+
+  .portfolio,
+  .outline {
+    display: none;
+  }
+
+  .markdown-container {
+    max-width: 100%;
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+/* Mobile: Improve text & spacing on small screens */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 16px;
+  }
+
+  #title h1 {
+    font-size: 36px;
+  }
+
+  #title h2 {
+    font-size: 60px;
+    margin-top: -1rem;
+  }
+
+  .card-carousel {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .image-container {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  #about > div {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .portrait img {
+    width: 100%;
+  }
+
+  .markdown-container {
+    padding: 0 10px;
+  }
+}
+
+/* Extra small devices: 480px and below */
+@media (max-width: 480px) {
+  nav img {
+    height: 40px;
+  }
+
+  #about > div {
+    max-width: 480px;
+    width: 100%;
+  }
+
+  section{
+    width: 100%;
+    max-width: 480px;
+  }
+
+  #interactive button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  footer {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  #title h2 {
+    font-size: 40px;
+  }
+
+  .card h1 {
+    font-size: 18px;
+  }
+}

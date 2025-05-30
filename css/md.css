@@ -1,7 +1,7 @@
 /* ====== MARKDOWN CONTAINER ====== */
 .markdown-container {
   /* Text Elements */
-  h1, h2, h3, h4, h5, h6, p, table, li {
+  h1, h2, h3, h4, h5, h6, p, table{
     color: var(--text-color);
     font-family: "Manrope", sans-serif;
     text-align: justify;
@@ -45,9 +45,17 @@
   }
 
   /* Paragraphs */
-  p {
-    margin: 15px 0;
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p  {
     text-indent: 0.5in;
+  }
+
+  p{
+    margin: 15px 0;
   }
 
   /* Lists */
@@ -137,13 +145,12 @@
     max-width: 100%;
   }
 
-  .image-container {
+  p:has(>img) {
     margin: 20px 0;
-    text-align: center;
-
-    img {
-      max-width: 90%;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   /* Text Modifiers */
@@ -170,6 +177,26 @@
     border-top: 2px solid #e2e8f0;
     margin: 20px 0;
   }
+
+  li{
+    text-align: left;
+  }
+}
+
+
+
+.MathJax {
+    outline: none;
+    color: inherit;
+}
+
+/* Prevent flash of unstyled content */
+.math-container {
+    visibility: hidden;
+}
+
+.math-container .MathJax_Display {
+    visibility: visible;
 }
 
 /* ====== RESPONSIVE ADJUSTMENTS ====== */
