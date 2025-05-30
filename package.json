@@ -1,21 +1,5 @@
 {
-  "name": "cmsc-57-portfolio",
-  "version": "1.0.0",
-  "description": "https://cmsc-57-portfolio.ravhenjuly17.workers.dev/",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NEH-VAR/cmsc-57-portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/NEH-VAR/cmsc-57-portfolio/issues"
-  },
-  "homepage": "https://github.com/NEH-VAR/cmsc-57-portfolio#readme"
+  "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.4.0"
+  }
 }
