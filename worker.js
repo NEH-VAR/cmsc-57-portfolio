@@ -1,13 +1,19 @@
-import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
+// worker.js
+import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
 
-addEventListener('fetch', event => {
-  event.respondWith(handleEvent(event))
-})
-
-async function handleEvent(event) {
-  try {
-    return await getAssetFromKV(event)
-  } catch (e) {
-    return new Response(`"${e.message}"`, { status: 500 })
+export default {
+  async fetch(request, env) {
+    try {
+      return await getAssetFromKV({
+        request,
+        waitUntil: promise => promise,
+      }, {
+        ASSET_NAMESPACE: env.__STATIC_CONTENT,
+        ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
+        mapRequestToAsset: req => mapRequestToAsset(req)
+      })
+    } catch (e) {
+      return new Response(e.message, { status: 500 })
+    }
   }
 }

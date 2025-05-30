@@ -1,7 +1,6 @@
 name = "cmsc-57-portfolio"
+main = "worker.js"
 compatibility_date = "2024-05-01"
-main = "worker.js"  
 
 [site]
-bucket = "./public"  # Your static files directory
-entry-point = "public"  # Also specify entry point for assets
+bucket = "./"  # Current directory
